@@ -1,0 +1,7 @@
+# Compiled code
+.o
+.so
+
+# Data
+.hdf5
+.root
