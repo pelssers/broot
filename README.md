@@ -9,6 +9,28 @@ The goal of this library is to provide a generic way of writing python numpy dat
 
 Secondly the library can be used to convert other file formats that store information in numpy-like structures, such as HDF5, to ROOT.
 
+## Installation
+
+To use broot a user must have installed python, ROOT and be able to compile C++ code.
+Then clone the repository and run 'compile.sh' to compile RootOutput.cpp to libRootOutput.so
+
+## Use
+
+To use broot one needs libRootOutput.so and RootWrap.py
+
+RootWrap can be imported in any python file and a new RootOutput instance can be made:
+
+```python
+import RootWrap
+
+OUT = RootWrap.RootOutput()
+```
+
+Two example scripts are provided in 'examples'.
+
+* 'convert.py' demonstrates the functions available using some ndarrays.
+* 'hdf_to_root.py' is a first implementation of a HDF5 to ROOT converter (HDF5 file not provided).
+
 ### Current support:
 
 * python2 :white_check_mark:
@@ -25,3 +47,4 @@ Secondly the library can be used to convert other file formats that store inform
 * Python package
 * HDF5 converter class
 * OS support for Windows and Mac
+* Documentation
