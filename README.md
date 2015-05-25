@@ -14,6 +14,10 @@ Secondly the library can be used to convert other file formats that store inform
 To use broot a user must have installed python, ROOT and be able to compile C++ code.
 Then clone the repository and run 'compile.sh' to compile RootOutput.cpp to libRootOutput.so
 
+```shell
+./compile.sh
+```
+
 ## Use
 
 To use broot one needs libRootOutput.so and RootWrap.py
