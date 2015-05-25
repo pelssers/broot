@@ -1,11 +1,13 @@
 /* RootOutput class
  *
  * Copyright (C) 2015, Bart Pelssers
- * License: GPL v2.0
+ * GPL v2.0
  */ 
 
 #include <iostream>
 #include <string>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include <TFile.h>
 #include <TTree.h>
@@ -76,15 +78,18 @@ void RootOutput::create_new_branch(char* tree_name,
 
     std::string s_branch_type(branch_name);
 
-    if (length > 1)
-        s_branch_type.append("[" + std::to_string(length) + "]");
+    if (length > 1) {
+        char s_length[9];
+        sprintf(s_length, "%d", length);
+        s_branch_type.append("[" + std::string(s_length) + "]");
+    }
 
     s_branch_type.append("/" + std::string(branch_type));
 
-    TTree* tree = reinterpret_cast<TTree*>(this->out_file->Get(tree_name));
+    TTree* tree = (TTree*)this->out_file->Get(tree_name);
 
     tree->Branch(branch_name,
-                 reinterpret_cast<void*>(buffer),
+                 (void*)buffer,
                  s_branch_type.c_str());
 
     return;
@@ -93,7 +98,7 @@ void RootOutput::create_new_branch(char* tree_name,
 void RootOutput::tree_fill(char* tree_name) {
 /* Fill tree_name with buffer values */
 
-    TTree* tree = reinterpret_cast<TTree*>(this->out_file->Get(tree_name));
+    TTree* tree = (TTree*)this->out_file->Get(tree_name);
     tree->Fill();
 
     return;
