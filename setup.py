@@ -94,6 +94,7 @@ setup(
     packages=[
         'broot',
     ],
+    py_modules=['broot.py'],
     package_dir={'broot':
                  'broot'},
     include_package_data=True,
