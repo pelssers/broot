@@ -6,7 +6,8 @@
 """
 
 import numpy as np
-import RootWrap
+from broot import RootWrap
+
 
 # Create a new instance of RootOutput
 OUT = RootWrap.RootOutput()

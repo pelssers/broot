@@ -10,7 +10,7 @@ import numpy as np
 
 import h5py
 
-import RootWrap
+from broot import RootWrap
 
 
 in_file = "xe100_120403_0107_000000_light.hdf5"
