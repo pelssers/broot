@@ -11,7 +11,7 @@ broot
 
 Library for converting python numpy datastructures to the ROOT output format.
 
-* Free software: LGPL 2.1 license
+* Free software: GPL v2 license
 * Documentation: https://broot.readthedocs.org.
 
 
@@ -26,11 +26,13 @@ Secondly the library can be used to convert other file formats that store inform
 Installation
 ------------
 
-To use broot a user must have installed python, ROOT and be able to compile C++ code.
-Then clone the repository and run 'compile.sh' to compile RootOutput.cpp to libRootOutput.so
+To use broot a user must have installed python, ROOT and be able to compile C++ code. To install::
 
-::
-    ./compile.sh
+    pip install broot
+
+To use the examples clone the repository and run::
+
+    python setup.py develop
 
 Use
 ---
@@ -39,8 +41,7 @@ To use broot one needs libRootOutput.so and RootWrap.py
 
 RootWrap can be imported in any python file and a new RootOutput instance can be made:
 
-.. code:: python
-    import RootWrap
+    from broot import RootWrap
 
     OUT = RootWrap.RootOutput()
 
